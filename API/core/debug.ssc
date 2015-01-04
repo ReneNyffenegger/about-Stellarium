@@ -1,0 +1,8 @@
+//  vim: ft=javascript
+//
+//  ..\runScript.bat debug.ssc
+//  
+
+
+// Press F12 to see debug output.
+core.debug("here's some text");
