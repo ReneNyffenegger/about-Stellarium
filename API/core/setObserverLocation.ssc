@@ -1,0 +1,12 @@
+//  vim: ft=javascript
+//
+//  ..\runScript.bat setObserverLocation.ssc
+//  
+
+
+// Go to Irchelturm
+core.setObserverLocation(
+  core.dmsToRad( 8, 36, 25.85 ), // longitude
+  core.dmsToRad(47, 32, 21.48 ), // latitude
+  0                              // Altitude
+);
