@@ -1,0 +1,11 @@
+//  vim: ft=javascript
+//
+//  ..\runScript.bat labelScreen.ssc
+//  
+
+
+var x        = 20;
+var y        = 30;
+var fontSize = 50;
+
+var lbl = LabelMgr.labelScreen("Some Text", x, y, true, fontSize, "#ffc08b");
