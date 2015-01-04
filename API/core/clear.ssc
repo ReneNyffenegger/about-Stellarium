@@ -1,0 +1,10 @@
+//  vim: ft=javascript
+//
+//  ..\runScript.bat clear.ssc
+//  
+
+
+// Clear the display options
+//   «natural»: azimuthal mount, atmosphere, landscape, no lines, labels or markers
+
+core.clear("natural");
