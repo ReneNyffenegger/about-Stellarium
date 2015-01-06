@@ -20,4 +20,9 @@ core.setDate(
    true                  // enable Delta T correction
 );
 
-GridLinesMgr.setFlagAzimuthalGrid(true);
+var currentAzGrid = GridLinesMgr.getFlagAzimuthalGrid();
+
+GridLinesMgr.setFlagAzimuthalGrid(! currentAzGrid);
+core.wait(2);
+
+GridLinesMgr.setFlagAzimuthalGrid(currentAzGrid);
