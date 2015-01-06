@@ -1,0 +1,24 @@
+//  vim: ft=javascript
+//
+//  ..\runScript.bat setFlagCardinalsPoints.ssc
+//  
+// shows N, W, E and N letters.
+
+// var currentFlagCardinal = LandscapeMgr.getFlagCardinalsPoints();
+
+StelMovementMgr.zoomTo(20, 0);
+
+core.moveToAltAzi(
+  7,
+  2,
+  0
+);
+
+
+LandscapeMgr.setFlagCardinalsPoints(false);
+core.wait(2);
+
+LandscapeMgr.setFlagCardinalsPoints(true);
+core.wait(2);
+
+LandscapeMgr.setFlagCardinalsPoints(currentFlagCardinal);
