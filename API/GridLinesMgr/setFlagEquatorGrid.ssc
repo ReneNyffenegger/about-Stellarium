@@ -1,0 +1,33 @@
+//  vim: ft=javascript
+//
+//  ..\runScript.bat setFlagEquatorGrid.ssc
+//  
+
+
+core.setObserverLocation(
+  50, // longitude
+  10, // latitude
+   0  // Altitude
+);
+
+
+
+core.setDeltaTAlgorithm("WithoutCorrection");
+
+core.setDate(
+  '2014-01-04T00:00:00',
+  'local'              , // or 'utc'
+   true                  // enable Delta T correction
+);
+
+core.wait(0.01); // TODO: Is this necessary?
+
+core.moveToAltAzi(10, 0, 0);
+StelMovementMgr.zoomTo(25, 0);
+
+var orig = GridLinesMgr.getFlagEquatorGrid();
+
+GridLinesMgr.setFlagEquatorGrid(true);
+core.wait(15);
+
+GridLinesMgr.setFlagEquatorGrid(orig);
