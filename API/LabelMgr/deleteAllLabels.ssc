@@ -1,0 +1,14 @@
+//  vim: ft=javascript
+//
+//  ..\runScript.bat deleteAllLabels.ssc
+//  
+
+var lbl_1 = LabelMgr.labelScreen("Some Text", 10, 10, true, 20, '#ffc08b');
+core.wait(1);
+
+var lbl_2 = LabelMgr.labelScreen("More Text", 10, 40, true, 20, '#ffc08b');
+core.wait(1);
+
+LabelMgr.deleteAllLabels();
+
+
