@@ -1,0 +1,7 @@
+//  vim: ft=javascript
+//
+//  ..\runScript.bat moveToRaDec.ssc
+//  
+
+GridLinesMgr.setFlagAzimuthalGrid(true);
+core.moveToRaDec("+240d", "20d");
