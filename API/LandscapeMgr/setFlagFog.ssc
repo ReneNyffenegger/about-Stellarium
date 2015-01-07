@@ -1,0 +1,38 @@
+//  vim: ft=javascript
+//
+//  ..\runScript.bat setFlagFog.ssc
+//  
+
+// Go to Irchelturm
+core.setObserverLocation(
+   8 + 36/60 + 25.85/60/60, // core.dmsToRad( 8, 36, 25.85 ), // longitude
+  47 + 32/60 + 21.48/60/60, // core.dmsToRad(47, 32, 21.48 ), // latitude
+   0                                                          // Altitude
+);
+
+
+core.setDeltaTAlgorithm("WithoutCorrection");
+
+core.setDate(
+  '2014-01-04T05:15:00',
+  'local'              , // or 'utc'
+   true                  // enable Delta T correction
+);
+
+core.wait(0.01); // Why is this even necessary
+
+core.moveToAltAzi("7d", "50d", 0);
+GridLinesMgr.setFlagAzimuthalGrid(true);
+
+StelMovementMgr.zoomTo(20, 0);
+
+var flag_orig = LandscapeMgr.getFlagFog();
+
+LandscapeMgr.setFlagFog(true);
+core.pauseScript();
+
+LandscapeMgr.setFlagFog(false);
+core.pauseScript();
+
+LandscapeMgr.setFlagLandscape(flag_orig);
+
