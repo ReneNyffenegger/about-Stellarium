@@ -34,5 +34,5 @@ core.pauseScript();
 LandscapeMgr.setFlagFog(false);
 core.pauseScript();
 
-LandscapeMgr.setFlagLandscape(flag_orig);
+LandscapeMgr.setFlagFog(flag_orig);
 
