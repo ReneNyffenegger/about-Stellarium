@@ -1,0 +1,28 @@
+//  vim: ft=javascript
+//
+//  ..\runScript.bat setDeltaTAlgorithm.ssc
+//  
+
+
+// Go to Irchelturm
+core.setObserverLocation(
+   8 + 36/60 + 25.85/60/60, // core.dmsToRad( 8, 36, 25.85 ), // longitude
+  47 + 32/60 + 21.48/60/60, // core.dmsToRad(47, 32, 21.48 ), // latitude
+   0                                                          // Altitude
+);
+
+// Note
+//   for fully compatibles behavior of this function with the version 0.11.4 or earlier,
+//   you should call
+     core.setDeltaTAlgorithm("WithoutCorrection");
+//   before running core.setDate(); for disabling DeltaT correction.
+
+core.setDate(
+  '2014-01-04T05:15:00',
+  'local'              , // or 'utc'
+   true                  // enable Delta T correction
+);
+
+StelMovementMgr.zoomTo(0.05, 0);
+core.selectObjectByName("Saturn");
+StelMovementMgr.setFlagTracking(true);
