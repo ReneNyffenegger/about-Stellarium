@@ -20,6 +20,10 @@ core.setDate(
    true                  // enable Delta T correction
 );
 
+core.wait(0.01);
+// GridLinesMgr.setFlagAzimuthalGrid(true);
+GridLinesMgr.setFlagEquatorGrid(true);
+
 var pos = core.getObjectPosition("Saturn");
 
 txt('altitude');
@@ -28,6 +32,11 @@ txt('dec'     );
 txt('decJ2000');
 txt('ra'      );
 txt('raJ2000' );
+
+// The Following does not seem to work!
+// core.moveToAltAzi(pos['altitude'], pos['azimuth'] + "d", 0);
+
+core.moveToRaDec(pos['ra'] + "d", pos['dec'] + "d", 0);
 
 function txt(key) {
 
