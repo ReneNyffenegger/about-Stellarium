@@ -1,0 +1,41 @@
+//  vim: ft=javascript
+//
+//  ..\runScript.bat setFlagPlanets.ssc
+//  
+//
+
+// Go to Irchelturm
+core.setObserverLocation(
+   8 + 36/60 + 25.85/60/60, // longitude
+  47 + 32/60 + 21.48/60/60, // latitude
+   0                        // Altitude
+);
+
+core.setDeltaTAlgorithm("WithoutCorrection");
+
+core.setDate(            // Sept 14th 1186: Planets come very close.
+  '1186-09-14T18:41:00',
+  'local'              , // or 'utc'
+   true                  // enable Delta T correction
+);
+
+StelMovementMgr.zoomTo(10, 0);
+
+core.wait(0.01);
+
+LandscapeMgr.setFlagLandscape(true);
+LandscapeMgr.setFlagAtmosphere(false);
+LandscapeMgr.setFlagFog(false);
+
+core.selectObjectByName("Venus");
+
+StelMovementMgr.setFlagTracking(true);
+core.selectObjectByName("");
+
+SolarSystem.setFlagPlanets(false);
+core.pauseScript();
+
+SolarSystem.setFlagPlanets(true);
+core.pauseScript();
+
+SolarSystem.setFlagPlanets(false);
