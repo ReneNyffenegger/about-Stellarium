@@ -1,0 +1,26 @@
+//  vim: ft=javascript
+//
+//  ..\runScript.bat pauseScript.ssc
+//  
+
+// Go to Irchelturm
+core.setObserverLocation(
+   8 + 36/60 + 25.85/60/60, // longitude  E-W
+  47 + 32/60 + 21.48/60/60, // latitude   S-N
+   0                        // Altitude
+);
+
+
+core.setDeltaTAlgorithm("WithoutCorrection");
+
+core.setDate(
+  '2014-01-04T02:00:00',
+  'local'              , // or 'utc'
+   true                  // enable Delta T correction
+);
+
+StelMovementMgr.zoomTo(30, 0);
+
+LabelMgr.labelScreen("Pausing Script Text", 20, 20, true, 20, "#ffc08b");
+core.pauseScript();
+LabelMgr.deleteAllLabels();
