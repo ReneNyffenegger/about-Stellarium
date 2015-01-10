@@ -1,0 +1,25 @@
+//  vim: ft=javascript
+//
+//  ..\runScript.bat setFlagMeridianLine.ssc
+//  
+
+core.setObserverLocation(
+    0,   // longitude (E-W)
+   30,   // latitude  (N-S)
+    0,   // Altitude
+    0.1  // Duration
+);
+
+core.setDate("2010-01-01T20:00:00", "local");
+StelMovementMgr.zoomTo(50, 0.1);
+
+core.wait(0.1);
+core.moveToAltAzi(   20, 170, 0);
+
+GridLinesMgr.setFlagAzimuthalGrid(true);
+
+GridLinesMgr.setFlagMeridianLine(true);
+LandscapeMgr.setFlagCardinalsPoints(true);
+
+core.setTimeRate(300);
+
