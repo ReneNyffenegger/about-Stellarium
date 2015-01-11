@@ -1,0 +1,37 @@
+//  vim: ft=javascript
+//
+//  ..\runScript.bat setCurrentLandscapeName.ssc
+
+
+StelMovementMgr.zoomTo(60, 0.1);
+
+var landscapeNames = LandscapeMgr.getAllLandscapeNames();
+
+var i = 1;
+
+for (var i in landscapeNames) {
+
+  LabelMgr.deleteAllLabels();
+  LabelMgr.labelScreen(landscapeNames[i], 20, 20, true, 18, '#ffc08b');
+
+  LandscapeMgr.setCurrentLandscapeName(landscapeNames[i]);
+
+  core.setDate('2014-01-04T12:00:00', 'local', true); revolve();
+  core.setDate('2014-01-04T00:00:00', 'local', true); revolve();
+
+  core.pauseScript();
+
+}
+
+LabelMgr.deleteAllLabels();
+
+
+function revolve() {
+
+  for (var azimuth=0; azimuth <= 359; azimuth+=6) {
+    core.moveToAltAzi(12, azimuth, 0);
+    core.wait(0.1);
+  }
+
+  
+}
