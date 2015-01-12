@@ -1,0 +1,20 @@
+//  vim: ft=javascript
+//
+//  ..\runScript.bat setMilkyWayvisible.ssc
+//  
+
+core.setObserverLocation(0, 0, 0);
+core.setDate('2014-07-11T00:00:00', 'local', true);
+
+StelMovementMgr.zoomTo(50, 0);
+
+core.wait(0.01); // Why is this even necessary?
+core.moveToAltAzi(22, 45);
+
+core.setMilkyWayVisible(true);
+core.pauseScript();
+
+core.setMilkyWayVisible(false);
+core.pauseScript();
+
+core.setMilkyWayVisible(true);
