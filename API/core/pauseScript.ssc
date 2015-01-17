@@ -29,6 +29,13 @@ core.pauseScript();
 //    ctrl-d then r
 //
 // In order to pause a script, ctrl-d then p can be used.
+//
+// ---
+//
+// The default (Ctrl-d then r) can be overwritten in %APPDATA%\Stellarium\Config:
+// Under the section [shortcuts] add, for example:
+//    actionResume_Script   = Return
+// so that a script can be resumed by pressing Return.
 
 
 LabelMgr.deleteAllLabels();
