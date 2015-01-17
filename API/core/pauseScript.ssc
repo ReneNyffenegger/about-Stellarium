@@ -23,4 +23,12 @@ StelMovementMgr.zoomTo(30, 0);
 
 LabelMgr.labelScreen("Pausing Script Text", 20, 20, true, 20, "#ffc08b");
 core.pauseScript();
+
+// In order to resume a paused script, the correct Key sequence must
+// be pressed. The default seems to be
+//    ctrl-d then r
+//
+// In order to pause a script, ctrl-d then p can be used.
+
+
 LabelMgr.deleteAllLabels();
