@@ -1,4 +1,1 @@
-about-Stellarium
-================
-
-about Stellarium
+# about Stellarium
