@@ -8,7 +8,10 @@ core.setObserverLocation(
    0
 );
 
-core.setDate("2016-03-21T03:41:00", "utc"); // Apparent sunrise
+core.setDate("2016-03-21T03:43:22", "utc"); // Apparent sunrise
+core.setTimeRate(0);
+
+LandscapeMgr.setCurrentLandscapeName("Ocean");
 
 GridLinesMgr.setFlagAzimuthalGrid(true, 0);
 
