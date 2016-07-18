@@ -1,0 +1,21 @@
+//  vim: ft=javascript
+
+// http://www.esrl.noaa.gov/gmd/grad/solcalc/sunrise.html
+
+core.setObserverLocation(
+   35 + 14/60,  // Longitude
+   31 + 41/60,  // Latitude
+   0.01
+);
+
+core.setDate("2016-03-21T03:41:00", "utc"); // Apparent sunrise
+
+GridLinesMgr.setFlagAzimuthalGrid(true);
+
+StelMovementMgr.zoomTo(6.0);
+
+core.wait(0.01);
+
+core.moveToAltAzi("+0d", "+90d", 0.01);
+
+// core.selectObjectByName("Sun", true);
