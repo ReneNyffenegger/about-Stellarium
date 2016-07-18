@@ -2,6 +2,11 @@
 
 // http://www.esrl.noaa.gov/gmd/grad/solcalc/sunrise.html
 
+// Apparently, the script needs to wait a second
+// at the start of the script and then again sometimes
+// after core.setObserverLocation, at least on Linux.
+//
+core.wait(1);
 core.setObserverLocation(
    35 + 14/60,  // Longitude
    31 + 41/60,  // Latitude
@@ -9,6 +14,7 @@ core.setObserverLocation(
 );
 
 core.setDate("2016-03-21T03:43:22", "utc"); // Apparent sunrise
+core.wait(1);
 core.setTimeRate(0);
 
 LandscapeMgr.setCurrentLandscapeName("Ocean");
@@ -16,8 +22,6 @@ LandscapeMgr.setCurrentLandscapeName("Ocean");
 GridLinesMgr.setFlagAzimuthalGrid(true, 0);
 
 StelMovementMgr.zoomTo(6.0, 0);
-
-core.wait(0.01);
 
 core.moveToAltAzi("+0d", "+90d", 0.0);
 
