@@ -1,0 +1,10 @@
+//  vim: ft=javascript
+
+
+GridLinesMgr.setFlagAzimuthalGrid(false);
+
+var landscapeNames = LandscapeMgr.getAllLandscapeNames();
+
+for (var i in landscapeNames) {
+  LabelMgr.labelScreen(landscapeNames[i], 10, 10 + 12*i, true, 10, '#ffc08b');
+}
