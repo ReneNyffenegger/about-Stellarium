@@ -1,11 +1,25 @@
 //  vim: ft=javascript
 //
-//  ..\runScript.bat labelScreen.ssc
+//  ..\..\runScript.bat labelScreen.ssc
 //  
 
+
+//
+// Go to Irchelturm
+//
+core.setObserverLocation(
+    8 + 36/60 + 25.85/60/60,
+   47 + 32/60 + 21.48/60/60,
+    0,
+    0,
+   "Irchelturm",
+   "Earth"       // This parameter seems necessary
+);
+
+core.setJDay(2456653.678472);
 
 var x        = 20;
 var y        = 30;
 var fontSize = 50;
 
-var lbl = LabelMgr.labelScreen("Some Text", x, y, true, fontSize, "#ffc08b");
+var lbl = LabelMgr.labelScreen("View from Irchelturm", x, y, true, fontSize, "#ffc08b");
