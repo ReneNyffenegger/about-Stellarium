@@ -1,6 +1,6 @@
 //  vim: ft=javascript
 //
-//  ..\API\runScript.bat great-sign_revelation-12.ssc
+//  ..\runScript.bat great-sign_revelation-12.ssc
 //  
 //  ---------------------------------------------------
 //
@@ -10,9 +10,9 @@
 
 
 core.setObserverLocation(
-   0, // longitude
-   0, // latitude
-   0  // Altitude
+   1, // longitude
+   1, // latitude
+   1  // Altitude
 );
 
 core.setDeltaTAlgorithm("WithoutCorrection");
@@ -22,13 +22,15 @@ core.setDate(
   'local'              , // or 'utc'
    true                  // enable Delta T correction
 );
+ 
 LandscapeMgr.setFlagAtmosphere(false);
 ConstellationMgr.setFlagLines (true);
+ 
+StelMovementMgr.zoomTo(
+  100, // Angle of field of view
+    0  // Duration for zoom to take place
+);
 
+core.setTimeRate(0);
 
-StelMovementMgr.zoomTo(100, 0);
-core.selectObjectByName("Sun", true);
-StelMovementMgr.setFlagTracking(true);
-core.selectObjectByName("", true);
-core.wait(0.01); // TODO: Is this necessary?
 SolarSystem.setFlagPlanets(true);
