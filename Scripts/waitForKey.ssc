@@ -1,0 +1,49 @@
+// vim: ft=javascript
+// Name: waitForKey hack
+// Author: Matthew Gates
+// License: Public Domain
+// Description: defined waitForKey() which waits for day or week time shift key to be pressed.
+//
+// ..\runScript.bat waitForKey.ssc
+
+var idLabel = LabelMgr.labelScreen("Waiting for pressing =, -, ] or [", 30, 200, true, 20, "#ff8833");
+waitForKey();
+LabelMgr.deleteLabel(idLabel);
+
+idLabel = LabelMgr.labelScreen("Key was pressed.", 30, 200, true, 20, "#ff8833");
+
+core.wait(1.5);
+LabelMgr.deleteLabel(idLabel);
+// LabelMgr.deleteAllLabels();
+
+function waitForKey() {
+   var savedDay  = core.getJDay();
+   var savedRate = core.getTimeRate();
+
+//
+// freeze time.
+//
+   core.setTimeRate(0);
+
+//
+// Store the Julian day number when scene was frozen
+//
+   var frozenDay    = Math.floor(core.getJDay());
+
+//
+// Copy value
+//
+   var displayedDay = frozenDay;
+
+//
+// 
+   while (frozenDay == Math.floor(core.getJDay())) {
+     //
+     // It's a busy wait loop, but heh, this is a hack...
+        core.wait(0.25);
+   }
+
+// Restore the old time and time rate and return
+   core.setJDay(savedDay);
+   core.setTimeRate(savedRate);
+}
