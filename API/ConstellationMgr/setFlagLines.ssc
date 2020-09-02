@@ -1,10 +1,12 @@
 //  vim: ft=javascript
 //
-//  ..\runScript.bat setFlagLines.ssc
+//  ..\..\runScript.bat setFlagLines.ssc
 //  
 
 
+//
 // Go to Irchelturm
+//
 core.setObserverLocation(
    0                           , // longitude (E-W)
    66.0 + 33.0/60 + 55.0/60/60 , // latitude  (N-S) / Polar circle
