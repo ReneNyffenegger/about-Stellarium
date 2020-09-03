@@ -10,5 +10,3 @@ var lbl_2 = LabelMgr.labelScreen("More Text", 10, 40, true, 20, '#ffc08b');
 core.wait(1);
 
 LabelMgr.deleteAllLabels();
-
-
