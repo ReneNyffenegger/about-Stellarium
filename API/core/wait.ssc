@@ -11,12 +11,9 @@ core.wait(1); txt("1");
 core.wait(1); txt("");
 
 
-
 function txt(str) {
 
   LabelMgr.deleteAllLabels();
   LabelMgr.labelScreen(str, 20, 20, true, 50, '#ff3311');
   
 }
-
-
