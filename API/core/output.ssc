@@ -1,0 +1,6 @@
+// vi: ft=javascript
+
+core.output('First line');
+core.output('Second line');
+core.saveOutputAs('c:\\users\\rene\\stellarium.out');
+core.output('Third line');
